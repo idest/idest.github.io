@@ -33,7 +33,7 @@ div.sidebar {
     color: white;
     height: 400px;
     width: 15%;
-    margin:0;
+    margin:1;
     padding:10px;
     float:left;
 }
@@ -42,7 +42,7 @@ div.content {
     color: black;
     height: 80%;
     width: 78%;
-    margin: 0;
+    margin: 1;
     padding:20px;
 }
 div.footer {

@@ -29,8 +29,8 @@
 
 			var tangle = new Tangle(element, {
 				initialize: function () {
-					this.cookies = 4;
-					this.caloriesPerCookie = 50;
+					this.cookies = 1;
+					this.caloriesPerCookie = 200;
 				},
 				update: function () {
 					this.calories = this.cookies * this.caloriesPerCookie;
@@ -46,8 +46,8 @@
 	<p>This is a simple reactive document.</p>
 
 	<p id="example">
-		When you eat <span data-var="cookies" class="TKAdjustableNumber" data-min="2" data-max="100"> cookies</span>, you
-		will consume <span data-var="calories"></span> calories.
+		Cuando resuelves <span data-var="cookies" class="TKAdjustableNumber" data-min="2" data-max="100"> puzzles de Einstein</span>, tu
+		CI aumenta en un <span data-var="calories"></span> %.
 	</p>
 
 </body>

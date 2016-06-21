@@ -1,0 +1,12 @@
+div.header {
+    background-color: black;
+    color: white;
+}
+div.content {
+    background-color: white;
+    color: black;
+}
+div.footer {
+    background-color: black;
+    color: white;
+}

@@ -46,9 +46,5 @@ div.inner {
 div.inner p {
     position:absolute;
     top:50%;
-    text-align:center;
-}
-
-div.inner2 {
-    padding:20px;
+    left:50%;
 }

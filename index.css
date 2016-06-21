@@ -28,19 +28,18 @@ div.sidebar {
     background-color: black;
     color: white;
     height: 80%;
-    width: 20%;
+    width: 15%;
     margin:0;
     padding:10px;
-    float:left;
 }
 div.content {
     background-color: white;
     color: black;
     height: 80%;
-    width: 80%;
+    width: 85%;
     margin: 0;
     padding:20px;
-    float:right;
+    float:left;
 }
 div.footer {
     background-color: black;

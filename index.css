@@ -38,7 +38,7 @@ div.container {
 div.sidebar {
     background-color: black;
     color: white;
-    height: 80%;
+    height: 100%;
     width: 15%;
     margin: 0;
     padding: 10px;
@@ -47,10 +47,11 @@ div.sidebar {
 div.content {
     background-color: white;
     color: black;
-    height: 80%;
+    height: 100%;
     width: 78%;
     margin: 0;
     padding:20px;
+    float:right;
 }
 div.footer {
     background-color: black;

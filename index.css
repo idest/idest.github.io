@@ -19,7 +19,6 @@ div.header {
     height: 15%;
     width: 100%;
     margin: 0;
-    position:relative;
 }
 div.content {
     background-color: white;
@@ -27,7 +26,6 @@ div.content {
     height: 80%;
     width: 100%;
     margin: 0;
-    position:relative;
 }
 div.footer {
     background-color: black;
@@ -35,17 +33,20 @@ div.footer {
     height: 5%;
     width: 100%;
     margin: 0;
-    position: relative;
 }
 
 div.inner {
     height:100%;
     weight:100%;
     padding:20px;
+    position:relative;
+    border:1px solid #73AD21;
+}
+
+div.inner p {
     position:absolute;
     top:50%;
     text-align:center;
-    border:1px solid #73AD21;
 }
 
 div.inner2 {

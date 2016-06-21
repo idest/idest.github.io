@@ -24,11 +24,19 @@ div.header {
     margin: 0;
     padding:20px;
 }
+div.sidebar {
+    background-color: black;
+    color: white;
+    height: 80%;
+    width: 20%;
+    margin:0;
+    padding:10px;
+}
 div.content {
     background-color: white;
     color: black;
     height: 80%;
-    width: 100%;
+    width: 80%;
     margin: 0;
     padding:20px;
 }

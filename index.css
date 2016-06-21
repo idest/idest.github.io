@@ -5,7 +5,7 @@ html, body {
     margin: 0;
 }
 
-h1, p {
+h1, h2, p {
     margin: 0;
 }
 
@@ -24,14 +24,14 @@ div.content {
     background-color: white;
     color: black;
     height: 80%;
-    width: auto;
+    width: 100%;
     margin: 0;
 }
 div.footer {
     background-color: black;
     color: white;
-    height: 5%;
-    width: auto;
+    heixght: 5%;
+    width: 100%;
     margin: 0;
 }
 

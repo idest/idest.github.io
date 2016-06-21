@@ -3,6 +3,14 @@
 <head>
   <title>Javier Iñigo's Lair</title>
   <link rel="stylesheet" href="index.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+      $("#sb01").click(function(){
+          $(".content").load("tangle.html");
+      });
+  });
+  </script>
 </head>
 
 <body>
@@ -17,6 +25,7 @@
   <div class="sidebar">
     <div class="inner">
       <p>The Sidebar</p>
+      <p id="sb01">Tangle</p>
     </div>
   </div>
   <div class="content">

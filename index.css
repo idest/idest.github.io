@@ -15,7 +15,7 @@ div.header {
     height: 15%;
     width: auto;
     margin: 0;
-    padding:20px;
+    padding:1px;
 }
 div.content {
     background-color: white;
@@ -23,7 +23,7 @@ div.content {
     height: 80%;
     width: auto;
     margin: 0;
-    padding: 20px;
+    padding:1px;
 }
 div.footer {
     background-color: black;
@@ -31,5 +31,5 @@ div.footer {
     height: 5%;
     width: auto;
     margin: 0;
-    padding:20px;
+    padding:1px;
 }

@@ -5,6 +5,10 @@ html, body {
     margin: 0;
 }
 
+h2, p {
+    margin: 0;
+}
+
 div.header {
     background-color: black;
     color: white;

@@ -39,7 +39,7 @@ div.content {
     width: 78%;
     margin: 0;
     padding:20px;
-    display:inline;
+    display:inline-block;
 }
 div.footer {
     background-color: black;

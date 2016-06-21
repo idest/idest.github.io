@@ -19,6 +19,7 @@ div.header {
     height: 15%;
     width: 100%;
     margin: 0;
+    position:relative;
 }
 div.content {
     background-color: white;
@@ -26,6 +27,7 @@ div.content {
     height: 80%;
     width: 100%;
     margin: 0;
+    position:relative;
 }
 div.footer {
     background-color: black;
@@ -33,12 +35,13 @@ div.footer {
     heixght: 5%;
     width: 100%;
     margin: 0;
+    position: relative;
 }
 
 div.inner {
     padding:20px;
-    position:relative;
-    top:10%;
+    position:absolute;
+    top:50%;
     text-align:center;
 }
 

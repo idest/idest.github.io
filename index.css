@@ -1,12 +1,23 @@
+head, body {
+    height: 100%;
+    width: 100%;
+}
+
 div.header {
     background-color: black;
     color: white;
+    height: 15%;
+    width: auto;
 }
 div.content {
     background-color: white;
     color: black;
+    height: 80%;
+    width: auto;
 }
 div.footer {
     background-color: black;
     color: white;
+    height: 5%;
+    width: auto;
 }

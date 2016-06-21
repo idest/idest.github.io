@@ -39,7 +39,7 @@ div.content {
     width: 80%;
     margin: 0;
     padding:20px;
-    float:left;
+    float:right;
 }
 div.footer {
     background-color: black;

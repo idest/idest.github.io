@@ -16,10 +16,6 @@ div {
     box-sizing: border-box;
 }
 
-.clearfix {
-  overflow: auto;
-}
-
 div.header {
     background-color: black;
     color: white;
@@ -41,14 +37,14 @@ div.sidebar {
     height: 100%;
     width: 15%;
     margin: 0;
-    padding: 10px;
+    padding: 20px;
     float: left;
 }
 div.content {
     background-color: white;
     color: black;
     height: 100%;
-    width: 78%;
+    width: 80%;
     margin: 0;
     padding:20px;
     float:right;

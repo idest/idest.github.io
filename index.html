@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Javier Iñigo's Lair 1</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Javier Iñigo's Lair</title>
   <link rel="stylesheet" href="index.css" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+  <!-- Ajax with jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js">
+  </script>
+  <!-- Tangle -->
+  <script type="text/javascript" src="libraries/Tangle.js"></script>
+  <!-- TangleKit (optional) -->
+  <link rel="stylesheet" href="libraries/TangleKit/TangleKit.css" type="text/css">
+  <script type="text/javascript" src="libraries/TangleKit/mootools.js"></script>
+  <script type="text/javascript" src="libraries/TangleKit/sprintf.js"></script>
+  <script type="text/javascript" src="libraries/TangleKit/BVTouchable.js"></script>
+  <script type="text/javascript" src="libraries/TangleKit/TangleKit.js"></script>
+  <!-- p5
+  <script type="text/javascript" src="libraries/p5.js"></script>
+  <script type="text/javascript" src="libraries/p5/p5.sound.js"></script>
+  <script type="text/javascript" src="libraries/p5/p5.dom.js"></script>
+  -->
   <script>
   $(document).ready(function(){
       $("#sb01").click(function(){
@@ -11,6 +27,26 @@
       });
   });
   </script>
+  <script type="text/javascript">
+
+		function setUpTangle () {
+
+			var element = document.getElementById("example");
+
+			var tangle = new Tangle(element, {
+				initialize: function () {
+					this.cookies = 1;
+					this.caloriesPerCookie = 200;
+				},
+				update: function () {
+					this.calories = this.cookies * this.caloriesPerCookie;
+				}
+			});
+		}
+
+  </script>
+
+
 </head>
 
 <body>

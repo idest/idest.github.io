@@ -39,7 +39,7 @@ div.inner {
     padding:20px;
     position:absolute;
     top:50%;
-    left:50%;
+    text-align:center;
 }
 
 div.inner2 {

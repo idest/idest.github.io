@@ -32,13 +32,15 @@ div.content {
 div.footer {
     background-color: black;
     color: white;
-    heixght: 5%;
+    height: 5%;
     width: 100%;
     margin: 0;
     position: relative;
 }
 
 div.inner {
+    height:100%;
+    weight:100%;
     padding:20px;
     position:absolute;
     top:50%;

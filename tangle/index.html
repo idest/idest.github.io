@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Tangle document</title>
+
+  <!-- Tangle -->
+  <script type="text/javascript" src="libraries/Tangle.js"></script>
+
+  <!-- TangleKit (optional) -->
+  <link rel="stylesheet" href="libraries/TangleKit/TangleKit.css" type="text/css">
+  <script type="text/javascript" src="libraries/TangleKit/mootools.js"></script>
+  <script type="text/javascript" src="libraries/TangleKit/sprintf.js"></script>
+  <script type="text/javascript" src="libraries/TangleKit/BVTouchable.js"></script>
+  <script type="text/javascript" src="libraries/TangleKit/TangleKit.js"></script>
+
+<!-- p5
+  <script type="text/javascript" src="libraries/p5.js"></script>
+  <script type="text/javascript" src="libraries/p5/p5.sound.js"></script>
+  <script type="text/javascript" src="libraries/p5/p5.dom.js"></script>
+-->
+
+  <!-- example -->
+  <script type="text/javascript">
+
+		function setUpTangle () {
+
+			var element = document.getElementById("example");
+
+			var tangle = new Tangle(element, {
+				initialize: function () {
+					this.cookies = 4;
+					this.caloriesPerCookie = 50;
+				},
+				update: function () {
+					this.calories = this.cookies * this.caloriesPerCookie;
+				}
+			});
+		}
+
+	</script>
+</head>
+
+<body onload="setUpTangle();">
+
+	<p>This is a simple reactive document.</p>
+
+	<p id="example">
+		When you eat <span data-var="cookies" class="TKAdjustableNumber" data-min="2" data-max="100"> cookies</span>, you
+		will consume <span data-var="calories"></span> calories.
+	</p>
+
+</body>
+</html>

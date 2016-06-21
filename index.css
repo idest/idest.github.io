@@ -17,7 +17,7 @@ div.header {
     background-color: black;
     color: white;
     height: 15%;
-    width: auto;
+    width: 100%;
     margin: 0;
 }
 div.content {

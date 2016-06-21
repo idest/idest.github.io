@@ -14,7 +14,7 @@ div {
     box-sizing: border-box;
 }
 div.header {
-    background-color: green;
+    background-color: black;
     color: white;
     height: 15%;
     width: 100%;
@@ -28,7 +28,7 @@ div.container {
     margin:0;
 }
 div.footer {
-    background-color: green;
+    background-color: black;
     color: white;
     height: 5%;
     width: 100%;
@@ -39,7 +39,7 @@ div.footer {
     padding-bottom: 10px;
 }
 div.sidebar {
-    background-color: red;
+    background-color: black;
     color: white;
     height: 100%;
     width: 15%;

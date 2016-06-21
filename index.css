@@ -31,7 +31,6 @@ div.sidebar {
     width: 15%;
     margin:0;
     padding:10px;
-    float:left;
 }
 div.content {
     background-color: white;
@@ -41,6 +40,7 @@ div.content {
     margin: 0;
     padding:20px;
     float:left;
+    display:inline-block;
 }
 div.footer {
     background-color: black;

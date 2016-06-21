@@ -36,8 +36,8 @@ div.footer {
 }
 
 div.inner {
-    height:100%;
-    weight:100%;
+    height:auto;
+    weight:auto;
     padding:20px;
     position:relative;
     border:1px solid #73AD21;

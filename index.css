@@ -4,20 +4,17 @@ html, body {
     width: 100%;
     margin: 0;
 }
-
 h1, h2, p {
     margin: 0;
 }
-
 div {
     display: block
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 div.header {
-    background-color: black;
+    background-color: green;
     color: white;
     height: 15%;
     width: 100%;
@@ -30,9 +27,19 @@ div.container {
     width: 100%;
     margin:0;
 }
-
+div.footer {
+    background-color: green;
+    color: white;
+    height: 5%;
+    width: 100%;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 div.sidebar {
-    background-color: black;
+    background-color: red;
     color: white;
     height: 100%;
     width: 15%;
@@ -49,25 +56,12 @@ div.content {
     padding:20px;
     float:right;
 }
-div.footer {
-    background-color: black;
-    color: white;
-    height: 5%;
-    width: 100%;
-    margin: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 div.inner {
     height:100%;
     width:100%;
     position:relative;
     border:1px solid #73AD21;
 }
-
 div.inner p {
     position:absolute;
     top:50%;

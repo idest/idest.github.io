@@ -28,12 +28,13 @@
 			var element = document.getElementById("example");
 
 			var tangle = new Tangle(element, {
+
 				initialize: function () {
-					this.cu-tons = 1;
+					this.cuTons = 1;
 					this.waterPerTon = 50;
 				},
 				update: function () {
-					this.water-tons = this.cu-tons * this.waterPerTon;
+					this.waterTons = this.cuTons * this.waterPerTon;
 				}
 			});
 		}
@@ -43,12 +44,11 @@
 
 <body onload="setUpTangle();">
 
-
 	<p>This is a simple reactive document.</p>
 
 	<p id="example">
-		Para producir <span data-var="cu-tons" class="TKAdjustableNumber" data-min="1" data-max="100"> tonelada(s) de cobre</span>, se extraen
-		 <span data-var="water-tons"></span> toneladas de agua.
+		Para producir <span data-var="cuTons" class="TKAdjustableNumber" data-min="1" data-max="100"> tonelada(s) de cobre</span>, se extraen
+		<span data-var="waterTons"></span> toneladas de Agua.
 	</p>
 
 </body>

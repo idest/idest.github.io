@@ -21,7 +21,7 @@
 -->
 
   <!-- example -->
-  <script type="text/javascript">
+<script type="text/javascript">
 
 		function setUpTangle () {
 
@@ -29,26 +29,36 @@
 
 			var tangle = new Tangle(element, {
 				initialize: function () {
-					this.cookies = 1;
-					this.caloriesPerCookie = 200;
+					this.tons-cu = 1;
+		                        this.rockPerTon = 100;
+                                        this.waterPerTon = 50;
+		                        this.dinamPerTon = 0.1;
+		                        this.gasPerTon = 0.2;
+		                        this.energyPerTon = 4;
 				},
 				update: function () {
-					this.calories = this.cookies * this.caloriesPerCookie;
+					this.tons-rock = this.tons-cu * this.rockPerTon;
+		                        this.tons-water = this.tons-cu * this.waterPerTon;
+		                        this.tons-dinam = this.tons-cu * this.dinamPerTon;
+		                        this.tons-gas = this.tons-cu * this.gasPerTon;
+		                        this.energy = this.tons-cu * this.energyPerTon;
 				}
 			});
 		}
+</script>
 
-	</script>
 </head>
 
 <body onload="setUpTangle();">
-
-	<p>This is a simple reactive document.</p>
-
-	<p id="example">
-		Cuando resuelves <span data-var="cookies" class="TKAdjustableNumber" data-min="1" data-max="100"> puzzle(s) de Einstein</span>, tu
-		CI aumenta en un <span data-var="calories"></span> %.
-	</p>
-
+  <h2>Recursos extraidos en la mineria del cobre.</h2>
+  <div id="example">
+    <ul>Para producirs <span data-var="tons-cu" class="TKAdjustableNumber" data-min="1" data-max="1000"> tonelada(s) de cobre</span>, son necesarios:
+	<li><span data-var="tons-rock"></span> toneladas de roca.</li>
+	<li><span data-var="tons-water"></span> toneladas de agua.</li>
+	<li><span data-var="tons-dinam"></span> toneladas de explosivos.</li>
+	<li><span data-var="tons-gas"></span> toneladas de combustible.</li>
+	<li><span data-var="energy"></span> MWh de electricidad.</li>
+    </ul>
+  </div>
 </body>
 </html>

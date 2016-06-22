@@ -37,11 +37,11 @@
 		                        this.energyPerTon = 4;
 				},
 				update: function () {
-					this.rockTons = this.tons-cu * this.rockPerTon;
-		                        this.waterTons = this.tons-cu * this.waterPerTon;
-		                        this.dinamTons = this.tons-cu * this.dinamPerTon;
-		                        this.gasTons = this.tons-cu * this.gasPerTon;
-		                        this.energy = this.tons-cu * this.energyPerTon;
+					this.rockTons = this.cuTons * this.rockPerTon;
+		                        this.waterTons = this.cuTons * this.waterPerTon;
+		                        this.dinamTons = this.cuTons * this.dinamPerTon;
+		                        this.gasTons = this.cuTons * this.gasPerTon;
+		                        this.energy = this.cuTons * this.energyPerTon;
 				}
 			});
 		}
@@ -52,7 +52,7 @@
 <body onload="setUpTangle();">
   <h2>Recursos extraidos en la mineria del cobre.</h2>
   <p>
-    <ul id="example">-Para producir <span data-var="cuTons" class="TKAdjustableNumber" data-min="1" data-max="1000"> tonelada(s) de cobre</span>, son necesarios:
+    <ul id="example">-Para producir <span data-var="cuTons" class="TKAdjustableNumber" data-min="1" data-max="1000"> tonelada(s) de cobre</span>, se extraen:
 	<li><span data-var="rockTons"></span> toneladas de roca.</li>
 	<li><span data-var="waterTons"></span> toneladas de agua.</li>
 	<li><span data-var="dinamTons"></span> toneladas de explosivos.</li>

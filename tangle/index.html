@@ -28,9 +28,10 @@
 			var element = document.getElementById("example");
 
 			var tangle = new Tangle(element, {
+
 				initialize: function () {
 					this.cookies = 1;
-					this.caloriesPerCookie = 200;
+					this.caloriesPerCookie = 50;
 				},
 				update: function () {
 					this.calories = this.cookies * this.caloriesPerCookie;
@@ -46,8 +47,8 @@
 	<p>This is a simple reactive document.</p>
 
 	<p id="example">
-		Cuando resuelves <span data-var="cookies" class="TKAdjustableNumber" data-min="1" data-max="100"> puzzle(s) de Einstein</span>, tu
-		CI aumenta en un <span data-var="calories"></span> %.
+		Para producir <span data-var="cookies" class="TKAdjustableNumber" data-min="1" data-max="100"> tonelada(s) de cobre</span>, se extraen
+		<span data-var="calories"></span> toneladas de cobre.
 	</p>
 
 </body>

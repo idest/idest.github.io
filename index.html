@@ -22,6 +22,45 @@
   -->
 </head>
 <body>
+    <div class="header">
+	<div class="inner">
+	    <p>The header</p>
+	</div>
+    </div>
+
+    <div class="container">
+	<div class="sidebarLeft">
+	    <div class="inner">
+		<p>The Sidebar</p>
+		<br>
+		<button id="sb01" class="menuButton">Recursos en la Minería</button>
+		<button id="sb02" class="menuButton">Aventura en texto</button>
+		<!--
+		<ul>
+		     <li id="sb01"><a>Recursos Minería</a></li>
+		     <li id="sb02"><a>Aventura en texto</a></li>
+		</ul>
+		-->
+	    </div>
+	</div>
+	<div class="content">
+	    <div class="inner">
+		<p>Here goes the content</p>
+	    </div>
+	</div>
+	<div class="sidebarRight">
+	    <div class="inner">
+		<p>The Right Sidebar</p>
+	    </div>
+	</div>
+    </div>
+
+    <div class="footer">
+	<div class="inner">
+	    <p>The footer</p>
+	</div>
+    </div>
+    
     <script>
      $(document).ready(function(){
 	 $("#sb01").click(function(){
@@ -32,46 +71,5 @@
 	 });
      });
     </script>
-
-    
-<div class="header">
-  <div class="inner">
-    <p>The header</p>
-  </div>
-</div>
-
-<div class="container">
-    <div class="sidebarLeft">
-	<div class="inner">
-	    <p>The Sidebar</p>
-	    <br>
-	    <button id="sb01" class="menuButton">Recursos en la Minería</button>
-	    <button id="sb02" class="menuButton">Aventura en texto</button>
-	    <!--
-	    <ul>
-		<li id="sb01"><a>Recursos Minería</a></li>
-		<li id="sb02"><a>Aventura en texto</a></li>
-	    </ul>
-	    -->
-	</div>
-    </div>
-    <div class="content">
-	<div class="inner">
-	    <p>Here goes the content</p>
-	</div>
-    </div>
-    <div class="sidebarRight">
-	<div class="inner">
-	    <p>The Right Sidebar</p>
-	</div>
-    </div>
-</div>
-
-<div class="footer">
-  <div class="inner">
-    <p>The footer</p>
-  </div>
-</div>
-
 </body>
 </html>

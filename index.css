@@ -21,6 +21,9 @@ li a:hover {
     color: white;
 }
 */
+button:focus {
+    outline:0;
+}
 .menuButton {
     background-color: black; /* Green */
     width: 100%;

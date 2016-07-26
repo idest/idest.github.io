@@ -42,7 +42,7 @@ function setup(){
 }
 
 function draw(){
-    if (mouseY < Height*2) {
+    if (mouseY < Height*1.5) {
 	counter = counter + 1;
 	background(0);
 	stroke(255);

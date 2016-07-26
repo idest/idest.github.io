@@ -4,30 +4,23 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Javier Iñigo's stuff</title>
   <link rel="stylesheet" href="index.css" type="text/css">
-  <!-- Ajax with jQuery -->
+  <!-- Ajax with jQuery
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js">
   </script>
-  <!-- Tangle -->
-  <script type="text/javascript" src="libraries/Tangle.js"></script>
-  <!-- TangleKit (optional) -->
-  <link rel="stylesheet" href="libraries/TangleKit/TangleKit.css" type="text/css">
-  <script type="text/javascript" src="libraries/TangleKit/mootools.js"></script>
-  <script type="text/javascript" src="libraries/TangleKit/sprintf.js"></script>
-  <script type="text/javascript" src="libraries/TangleKit/BVTouchable.js"></script>
-  <script type="text/javascript" src="libraries/TangleKit/TangleKit.js"></script>
-  <!-- p5
-  <script type="text/javascript" src="libraries/p5.js"></script>
+  -->
+  <!-- p5.js -->
+  <script type="text/javascript" src="libraries/p5.js">
+  </script>
+  <!--
   <script type="text/javascript" src="libraries/p5/p5.sound.js"></script>
   <script type="text/javascript" src="libraries/p5/p5.dom.js"></script>
   -->
 </head>
 <body>
     <div class="header">
-	<div class="inner">
-	    <p>The header</p>
+	<div class="inner" id="innerHeader">
 	</div>
     </div>
-
     <div class="container">
 	<div class="sidebarLeft">
 	    <div class="inner">
@@ -35,12 +28,6 @@
 		<br>
 		<button id="sb01" class="menuButton">Recursos en la Minería</button>
 		<button id="sb02" class="menuButton">Aventura en texto</button>
-		<!--
-		<ul>
-		     <li id="sb01"><a>Recursos Minería</a></li>
-		     <li id="sb02"><a>Aventura en texto</a></li>
-		</ul>
-		-->
 	    </div>
 	</div>
 	<div class="content">
@@ -60,7 +47,7 @@
 	    <p>The footer</p>
 	</div>
     </div>
-    
+    <script type="text/javascript" src="header.js"></script>
     <script>
      $(document).ready(function(){
 	 $("#sb01").click(function(){

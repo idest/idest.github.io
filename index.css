@@ -55,9 +55,9 @@ div {
     height: 15%;
     width: 100%;
     margin: 0;
-    padding-left:20px;
-    padding-right:20px;
-    padding-top:20px;
+    //padding-left:20px;
+    //padding-right:20px;
+    //padding-top:20px;
 }
 
 .container {
@@ -71,9 +71,9 @@ div {
     height: 10%;
     width: 100%;
     margin: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    //padding-left: 20px;
+    //padding-right: 20px;
+    //padding-bottom: 20px;
 }
 .sidebarLeft {
     background-color: black;
@@ -81,7 +81,7 @@ div {
     height: 100%;
     width: 15%;
     margin: 0;
-    padding-left: 20px;
+    //padding-left: 20px;
     float: left;
 }
 .content {
@@ -99,7 +99,7 @@ div {
     height: 100%;
     width: 15%;
     margin: 0;
-    padding-right: 20px;
+    //padding-right: 20px;
     float:left;
 }
 .inner {

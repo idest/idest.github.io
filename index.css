@@ -39,7 +39,14 @@ div {
     //padding-right:20px;
     //padding-top:20px;
 }
-
+.header .inner p{
+    text-align:center;
+    margin:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
 .container {
     height: 75%;
     width: 100%;
@@ -54,6 +61,13 @@ div {
     //padding-left: 20px;
     //padding-right: 20px;
     //padding-bottom: 20px;
+}
+.footer .inner p{
+    margin:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
 }
 .sidebarLeft {
     background-color: black;
@@ -97,6 +111,14 @@ div {
     padding-top: 5%;
     float:left;
 }
+.content .inner p{
+    text-align:center;
+    margin:0;
+    position:absolute;
+    top:0%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
 .sidebarRight {
     background-color: black;
     color: white;
@@ -137,28 +159,4 @@ div {
     width:100%;
     position:relative;
     /*border:1px solid #73AD21;*/
-}
-.inner p {
-    text-align:center;
-}
-.header .inner p{
-    margin:0;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-}
-.content .inner p{
-    margin:0;
-    position:absolute;
-    top:0%;
-    left:50%;
-    transform: translate(-50%, -50%);
-}
-.footer .inner p{
-    margin:0;
-    position:absolute;
-    top:0%;
-    left:50%;
-    transform: translate(-50%, -50%);
 }

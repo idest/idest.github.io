@@ -40,7 +40,6 @@ div {
     //padding-top:20px;
 }
 .header .inner p{
-    text-align:center;
     margin:0;
     position:absolute;
     top:50%;
@@ -112,7 +111,6 @@ div {
     float:left;
 }
 .content .inner p{
-    text-align:center;
     margin:0;
     position:absolute;
     top:0%;
@@ -159,4 +157,7 @@ div {
     width:100%;
     position:relative;
     /*border:1px solid #73AD21;*/
+}
+.inner p {
+    text-align:center;
 }

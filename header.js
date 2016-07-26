@@ -17,6 +17,9 @@ var X = 0;
 var period = 0;
 var lambda = 0;
 
+var blankSides = Width/3;
+var dotDistances = blankSides/4;
+
 var lambdaMin = 200; //pixels
 var lambdaMax = 400; //pixels
 var periodMin = 60; //frames
@@ -39,6 +42,14 @@ function setup(){
     background(0);
     frameRate(60);
     pixelDensity(displayDensity());
+    stroke(255);
+    point(50,50);
+    point(dotDistances,Height/2);
+    point(dotDistances*2,Height/2);
+    point(dotDistances*3,Height/2);
+    point(dotDistances*9,Height/2);
+    point(dotDistances*10,Height/2);
+    point(dotDistances*11,Height/2);
 }
 
 function draw(){
@@ -46,6 +57,31 @@ function draw(){
 	counter = counter + 1;
 	background(0);
 	stroke(255);
+
+	strokeWeight(44);
+	point(dotDistances,Height/2);
+	point(dotDistances*11,Height/2);
+
+	strokeWeight(21);
+	point(dotDistances*2,Height/2);
+	point(dotDistances*10,Height/2);
+
+	strokeWeight(13);
+	point(dotDistances*3,Height/2);
+	point(dotDistances*9,Height/2);
+
+	strokeWeight(8);
+	point(dotDistances*4,Height/2);
+	point(dotDistances*8,Height/2);
+
+	strokeWeight(13);
+	point(dotDistances*5,Height/2);
+	point(dotDistances*7,Height/2);
+
+	strokeWeight(21);
+	point(dotDistances*6,Height/2);
+
+	
 	strokeWeight(4);
 	
 	xLeftPoints.push(xLeft);
@@ -69,8 +105,6 @@ function draw(){
 	period = periodMin + Y*(periodMax - periodMin);
 	alfa = alfa + (2*PI/(period)); //*step;
 	lambda = lambdaMin + X*(lambdaMax-lambdaMin);
-
-	print(period + "//");
 	
 	if (k == 1) {
 	    xLeftPoints.unshift(xLeftPoints[0] + (lambda)/(period));

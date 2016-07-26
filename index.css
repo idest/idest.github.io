@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 h1, h2, p {
     margin: 0;
@@ -19,41 +20,8 @@ a:hover {
 a:active {
     color:darkgrey;
 }
-/*
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-li a {
-    display: block;
-}
-li a:hover {
-    background-color: #555;
-    color: white;
-}
-*/
 button:focus {
     outline:0;
-}
-.menuButton {
-    background-color: black; /* Green */
-    width: 100%;
-    border: none;
-    margin: 0;
-    color: white;
-    padding: 5px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-.menuButton:hover {
-    background-color:#4CAF50; /*#0B610B; #088A08; green; #4CAF50; #73AD21;*/
-    color: black;
-    cursor:pointer;
 }
 div {
     display: block
@@ -91,17 +59,40 @@ div {
     background-color: black;
     color: white;
     height: 100%;
-    width: 15%;
+    width: 16.6%;
     margin: 0;
     //padding-left: 20px;
-    padding-top: 5%;
+    padding-top: 2%;
     float: left;
+}
+.sidebarLeft p {
+    text-decoration: underline;
+}
+.sidebarLeft .menuButton {
+    background-color: black; /* Green */
+    width: 100%;
+    border: none;
+    margin: 0;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.sidebarLeft .menuButton:hover {
+    background-color:#4CAF50; /*#0B610B; #088A08; green; #4CAF50; #73AD21;*/
+    color: black;
+    cursor:pointer;
 }
 .content {
     background-color: black;
     color: white;
     height: 100%;
-    width: 70%;
+    width: 66.8%;
     margin: 0;
     padding-top: 5%;
     float:left;
@@ -110,11 +101,36 @@ div {
     background-color: black;
     color: white;
     height: 100%;
-    width: 15%;
+    width: 16.6%;
     margin: 0;
     //padding-right: 20px;
-    padding-top: 5%;
+    padding-top: 2%;
     float:left;
+}
+.sidebarRight p {
+    text-decoration: underline;
+}
+.sidebarRight ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.sidebarRight li {
+    display:block;
+}
+.sidebarRight a {
+    color:white;
+    text-decoration: none;
+    padding: 5px 5px;
+    display:block;
+    font-size:12px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.sidebarRight a:hover {
+    background-color: orange;
+    color:black;
 }
 .inner {
     height:100%;

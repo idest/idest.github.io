@@ -85,8 +85,8 @@ div {
     float: left;
 }
 .content {
-    background-color: dark grey;
-    color: black;
+    background-color: black;
+    color: white;
     height: 100%;
     width: 70%;
     margin: 0;

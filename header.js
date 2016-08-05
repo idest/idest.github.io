@@ -40,6 +40,7 @@ function setup(){
     var headerCanvas = createCanvas(Width,Height);
     headerCanvas.parent("innerHeader");
     background(0);
+    smooth(0);
     frameRate(60);
     pixelDensity(displayDensity());
     stroke(255);

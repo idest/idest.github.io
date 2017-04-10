@@ -2,8 +2,11 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Iñigo Echeverría</title>
+  <title>Javier Iñigo's stuff</title>
   <link rel="stylesheet" href="index.css" type="text/css">
+  <!-- Ajax with jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js">
+  </script>
   <!-- p5.js -->
   <script type="text/javascript" src="libraries/p5.js">
   </script>
@@ -78,5 +81,16 @@
 	    <p><a href="https://javierinigo.github.io">Inicio</a></p>
 	</div>
     </div>
-  </body>
+    <script type="text/javascript" src="header.js"></script>
+    <script>
+     $(document).ready(function(){
+	 $("#sb01").click(function(){
+	     $(".content").empty().append('<object data="https://javierinigo.github.io/extension/" style="width:100%; height: 100%;">');
+	 });
+	 $("#sb02").click(function(){
+	     $(".content").empty().append('<object data="https://javierinigo.github.io/adventures/" style="width:100%; height: 100%;">');
+	 });
+     });
+    </script>
+</body>
 </html>

@@ -30,8 +30,8 @@ div {
     box-sizing: border-box;
 }
 .header {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     height: 15%;
     width: 100%;
     margin: 0;
@@ -52,8 +52,8 @@ div {
     margin:0;
 }
 .footer {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     height: 10%;
     width: 100%;
     margin: 0;
@@ -69,8 +69,8 @@ div {
     transform: translate(-50%, -50%);
 }
 .sidebarLeft {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     height: 100%;
     width: 16.6%;
     margin: 0;
@@ -102,8 +102,8 @@ div {
     cursor:pointer;
 }
 .content {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     height: 100%;
     width: 66.8%;
     margin: 0;
@@ -118,8 +118,8 @@ div {
     transform: translate(-50%, -50%);
 }
 .sidebarRight {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     height: 100%;
     width: 16.6%;
     margin: 0;

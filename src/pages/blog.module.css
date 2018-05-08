@@ -1,0 +1,35 @@
+.title {
+  text-align: center;
+}
+.description {
+  text-align: center;
+}
+.postsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.postTitle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.postDate {
+  display: block;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top:10px;
+}
+
+.postExcerpt {
+  width: 100%;
+  text-align: center;
+}

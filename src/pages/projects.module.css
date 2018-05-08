@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+}
+.description {
+  text-align: center;
+}
+.project {
+  display: flex;
+  padding-left: 30px;
+  justify-content: flex-end;
+}
+.projectInformation {
+  width: 50%;
+}
+.projectThumbnail {
+  margin-right: 30px;
+}
+.projectTitle {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.projectDescription {
+  width: 100%
+}

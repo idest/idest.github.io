@@ -6,4 +6,4 @@ type: "post"
 template: "blog-post"
 draft: true
 ---
-My second bog plost right here, ladies and gentlemen.
+My second bog plost right here.

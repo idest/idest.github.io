@@ -40,7 +40,9 @@ export const query = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 100
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
+      filter: {
+        frontmatter: { template: { eq: "blog-post" }, published: { eq: true } }
+      }
     ) {
       edges {
         node {

@@ -4,6 +4,6 @@ date: "2018-05-07"
 path: "/blog/second-blog-post/"
 type: "post"
 template: "blog-post"
-draft: true
+published: false
 ---
 My second bog plost right here.

@@ -1,14 +1,14 @@
-import React from "react";
-
-import styles from "./about.module.css";
+import React from 'react';
+import Title from '../components/styled/Title';
+import Description from '../components/styled/Description';
 
 export default () => (
   <div>
-    <h1 className={styles.title}> About </h1>
-    <p className={styles.description}>
-      My name is Iñigo, I'm an earth science student and a self taught web 
-      developer who is interested in using programming and design to create 
+    <Title> About </Title>
+    <Description>
+      My name is Iñigo, I'm an earth science student and a self taught web
+      developer who is interested in using programming and design to create
       interactive learning tools.
-    </p>
+    </Description>
   </div>
-)
+);

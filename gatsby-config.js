@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'id est',
+    title: 'Id est',
     shortTitle: 'i.e.',
     colors: {
       primary: '#a2cca1',
@@ -21,6 +21,7 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    'gatsby-transformer-remark'
+    'gatsby-transformer-remark',
+    'gatsby-plugin-styled-components'
   ]
 };

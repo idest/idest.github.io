@@ -1,30 +1,20 @@
 import React from 'react';
 import Link from 'gatsby-link';
-
-import styles from './projects.module.css';
-
-const Project = props => (
-  <a href={props.url}>
-    <div className={styles.project}>
-      <img className={styles.projectThumbnail} src={props.image} alt="" />
-      <div className={styles.projectInformation}>
-        <h2 className={styles.projectTitle}>{props.title}</h2>
-        <p className={styles.projectDescription}>{props.description}</p>
-      </div>
-    </div>
-  </a>
-);
+import styled from 'styled-components';
+import A from '../components/styled/A';
+import Title from '../components/styled/Title';
+import Description from '../components/styled/Description';
 
 export default ({ data }) => (
   <div>
     <div>
-      <h1 className={styles.title}>Projects</h1>
-      <p className={styles.description}>Here's a list of my projects</p>
+      <Title>Projects</Title>
+      <Description>Here's a list of my projects</Description>
     </div>
-    <div className={styles.projectsContainer}>
+    <ProjectsContainer>
       {data.allMarkdownRemark.edges.map(({ node }) => {
         return (
-          <Project
+          <StyledProject
             image={node.frontmatter.image.publicURL}
             title={node.frontmatter.title}
             url={node.frontmatter.url}
@@ -32,9 +22,55 @@ export default ({ data }) => (
           />
         );
       })}
-    </div>
+    </ProjectsContainer>
   </div>
 );
+
+const Project = props => (
+  <StyledA href={props.url}>
+    <div className={props.className}>
+      <ProjectThumbnail src={props.image} alt="" />
+      <ProjectInformation>
+        <ProjectTitle>{props.title}</ProjectTitle>
+        <ProjectDescription>{props.description}</ProjectDescription>
+      </ProjectInformation>
+    </div>
+  </StyledA>
+);
+
+const StyledA = styled(A)`
+  opacity: 0.95;
+  &:hover {
+    opacity: 1;
+  }
+`;
+const ProjectsContainer = styled.div`
+  margin-top: 40px;
+`;
+const StyledProject = styled(Project)`
+  display: flex;
+  padding-left: 30px;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+`;
+const ProjectThumbnail = styled.img`
+  margin-right: 30px;
+  width: 300px;
+  height: auto;
+`;
+const ProjectInformation = styled.div`
+  width: 50%;
+`;
+const ProjectTitle = styled.h3`
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+`;
+const ProjectDescription = styled.p`
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 150px;
+`;
 
 export const query = graphql`
   query ProjectsQuery {

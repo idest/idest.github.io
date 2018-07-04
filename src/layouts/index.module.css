@@ -21,8 +21,8 @@ object, video {
 nav a, button {
   min-height: 48px;
   min-width: 48px;
-
 }
+
 .container {
   display: flex;
   flex-wrap:wrap;

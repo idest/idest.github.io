@@ -1,27 +1,16 @@
 import React from 'react';
 import Link from 'gatsby-link';
-
-import styles from './blog.module.css';
-
-const Post = props => (
-  <Link to={props.path}>
-    <div className={styles.post}>
-      <h3 className={styles.postTitle}>
-        {props.title}
-        <span className={styles.postDate}>{props.date}</span>
-      </h3>
-      <p className={styles.postExcerpt}>{props.excerpt}</p>
-    </div>
-  </Link>
-);
+import styled from 'styled-components';
+import Title from '../components/styled/Title';
+import Description from '../components/styled/Description';
 
 export default ({ data }) => (
   <div>
     <div>
-      <h1 className={styles.title}>Blog</h1>
-      <p className={styles.description}>Here's what I've written</p>
+      <Title>Blog</Title>
+      <Description>Here's what I've written</Description>
     </div>
-    <div className={styles.postsContainer}>
+    <PostsContainer>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Post
           key={node.id}
@@ -31,9 +20,62 @@ export default ({ data }) => (
           excerpt={node.excerpt}
         />
       ))}
-    </div>
+    </PostsContainer>
   </div>
 );
+
+const Post = props => (
+  <StyledLink to={props.path}>
+    <div className={props.className}>
+      <PostTitle>
+        {props.title}
+        <PostDate>{props.date}</PostDate>
+      </PostTitle>
+      <PostExcerpt>{props.excerpt}</PostExcerpt>
+    </div>
+  </StyledLink>
+);
+
+const StyledLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+  outline: none;
+  opacity: 0.75;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
+`;
+
+const PostsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const StyledPost = styled(Post)`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+`;
+
+const PostTitle = styled.h3`
+  text-align: center;
+  margin-bottom: 5px;
+`;
+
+const PostDate = styled.span`
+  display: block;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 10px;
+`;
+
+const PostExcerpt = styled.p`
+  width: 100%;
+  text-align: center;
+`;
 
 export const query = graphql`
   query BlogQuery {

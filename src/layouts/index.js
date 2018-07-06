@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import styled, { injectGlobal } from 'styled-components';
+import styled, { injectGlobal, ThemeProvider } from 'styled-components';
 import { media } from '../utils/style';
 import logo_letters from '../assets/logo_letters.png';
 import twitter from '../assets/twitter.svg';
@@ -8,61 +8,68 @@ import github from '../assets/github.svg';
 import mail from '../assets/mail.svg';
 import A from '../components/styled/A';
 
+const theme = {
+  colors: {
+    primary: '#a6b575',
+    primary_dark: '#7f8c55',
+    secondary: '#eee7cb',
+    secondary_dark: '#ebe2c5',
+  }
+};
+
 export default ({ children, data }) => (
-  <Container>
-    <Header>
-      <HeaderTitle
-        style={{
-          background: data.site.siteMetadata.colors.primary
-        }}
-      >
-        <div style={{ height: '100%' }}>
-          <StyledLinkLogo to="/">
-            <Logo src={logo_letters} />
-          </StyledLinkLogo>
-        </div>
-      </HeaderTitle>
-      <Nav
-        style={{
-          background: data.site.siteMetadata.colors.primary
-        }}
-      >
-        <LinksList>
-          <ListLink to="/projects/">Projects</ListLink>
-          <ListLink to="/blog/">Blog</ListLink>
-          <ListLink to="/about/">About</ListLink>
-        </LinksList>
-      </Nav>
-    </Header>
-    <Main>{children()}</Main>
-    <Footer
-      style={{
-        background: data.site.siteMetadata.colors.secondary
-      }}
-    >
-      <FooterLinks>
-        <StyledA href="https://www.github.com/idest">
-          <SocialLink>
-            <SocialIcon src={github} />
-            <SocialSpan>idest</SocialSpan>
-          </SocialLink>
-        </StyledA>
-        <StyledA href="mailto:ie@idest.io">
-          <SocialLink>
-            <SocialIcon src={mail} />
-            <SocialSpan> ie@idest.io </SocialSpan>
-          </SocialLink>
-        </StyledA>
-        <StyledA href="https://www.twitter.com/inigoecheverria">
-          <SocialLink>
-            <SocialIcon src={twitter} />
-            <SocialSpan>@inigoecheverria</SocialSpan>
-          </SocialLink>
-        </StyledA>
-      </FooterLinks>
-      <span>© 2018 Iñigo Echeverría</span>
-    </Footer>
-  </Container>
+  <ThemeProvider theme={theme}>
+    <Container>
+      {/*
+      <TopBarSection>
+        <TopBar>
+          <LangSpan>Spanish</LangSpan>
+          <LangSpan>English</LangSpan>
+        </TopBar>
+      </TopBarSection>
+      */}
+      <HeaderSection>
+        <Header>
+          <HeaderTitle>
+            <div style={{ height: '100%' }}>
+              <StyledLinkLogo to="/">
+                <Logo src={logo_letters} />
+              </StyledLinkLogo>
+            </div>
+          </HeaderTitle>
+          <Nav>
+            <LinksList>
+              <ListLink to="/projects/">Projects</ListLink>
+              <ListLink to="/blog/">Blog</ListLink>
+              <ListLink to="/about/">About</ListLink>
+            </LinksList>
+          </Nav>
+        </Header>
+      </HeaderSection>
+      <MainSection>
+        <Main>{children()}</Main>
+      </MainSection>
+      <FooterSection>
+        <Footer>
+          <FooterLinks>
+            <StyledA href="https://www.github.com/idest">
+              <SocialLink>
+                <SocialIcon src={github} />
+                <SocialSpan>idest</SocialSpan>
+              </SocialLink>
+            </StyledA>
+            <StyledA href="mailto:ie@idest.io">
+              <SocialLink>
+                <SocialIcon src={mail} />
+                <SocialSpan> ie@idest.io </SocialSpan>
+              </SocialLink>
+            </StyledA>
+          </FooterLinks>
+          <span>© 2018 Iñigo Echeverría</span>
+        </Footer>
+      </FooterSection>
+    </Container>
+  </ThemeProvider>
 );
 
 const ListLink = props => (
@@ -114,18 +121,46 @@ const Container = styled.div`
   ${media.desktop`
     margin-left: auto;
     margin-right: auto;
-    width: 960px;
   `};
 `;
 
+const TopBarSection = styled.div`
+  width: 100%;
+  background-color: #424242;
+`
+const TopBar = styled.div`
+  height: 25px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 80px;
+  ${media.desktop`
+    width: 960px; 
+    margin-left: auto;
+    margin-right: auto;
+  `}
+`;
+const LangSpan = styled.span`
+  font-size: 0.8em;
+  margin-left: 10px;
+  color: ${ props => props.theme.colors.secondary}
+`
+const HeaderSection = styled.div`
+  width: 100%;
+  background-color: ${props => props.theme.colors.primary};
+`;
 const Header = styled.header`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   height: 70px;
   width: 100%;
+  ${media.desktop`
+    width: 960px; 
+    margin-left: auto;
+    margin-right: auto;
+  `};
 `;
-
 const HeaderTitle = styled.div`
   box-sizing: border-box;
   display: flex;
@@ -134,7 +169,6 @@ const HeaderTitle = styled.div`
   padding-left: 80px;
   align-items: center;
 `;
-
 const Logo = styled.img`
   box-sizing: border-box;
   height: 100%;
@@ -142,7 +176,6 @@ const Logo = styled.img`
   margin: 0;
   padding: 10px;
 `;
-
 const Nav = styled.nav`
   box-sizing: border-box;
   display: flex;
@@ -153,34 +186,51 @@ const Nav = styled.nav`
   padding-right: 80px;
   padding-bottom: 10px;
 `;
-
 const LinksList = styled.ul`
   margin: 0;
 `;
-
 const LinkItem = styled.li`
   display: inline-block;
   margin: 0;
   margin-left: 1rem;
 `;
-
+const MainSection = styled.div`
+  flex: 1;
+  width: 100%;
+  background-color: ${props => props.theme.colors.secondary};
+`;
 const Main = styled.div`
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
   padding: 20px;
-  flex: 1;
+  padding-left: 120px;
+  padding-right: 120px;
+  ${media.desktop`
+    width: 960px; 
+    margin-left: auto;
+    margin-right: auto;
+  `};
 `;
-
+const FooterSection = styled.div`
+  flex-shrink: 0;
+  width: 100%;
+  background-color: ${props => props.theme.colors.primary_dark};
+`;
 const Footer = styled.footer`
-  height: 150px;
+  display: flex;
+  height: 100px;
   width: 100%;
   padding: 15px;
   padding-left: 80px;
   padding-right: 80px;
-  display: flex;
-  flex-shrink: 0;
   justify-content: space-between;
   align-items: center;
+  ${media.desktop`
+    width: 960px; 
+    margin-left: auto;
+    margin-right: auto;
+  `};
 `;
 
 const FooterLinks = styled.div`

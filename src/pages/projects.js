@@ -69,7 +69,7 @@ const ProjectTitle = styled.h3`
 const ProjectDescription = styled.p`
   box-sizing: border-box;
   width: 100%;
-  padding-right: 150px;
+  padding-right: 30px;
 `;
 
 export const query = graphql`

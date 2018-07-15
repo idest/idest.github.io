@@ -1,27 +1,30 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
+import Layout from '../components/Layout';
 import Title from '../components/styled/Title';
 import Description from '../components/styled/Description';
 
-export default ({ data }) => (
-  <div>
+export default ({ pageContext: { locale }, data }) => (
+  <Layout locale={locale} path="/blog">
     <div>
-      <Title>Blog</Title>
-      <Description>Here's what I've written</Description>
+      <div>
+        <Title>{data.file.childBlogJson.title}</Title>
+        <Description>{data.file.childBlogJson.description}</Description>
+      </div>
+      <PostsContainer>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Post
+            key={node.id}
+            path={node.frontmatter.path}
+            title={node.frontmatter.title}
+            date={node.frontmatter.date}
+            excerpt={node.excerpt}
+          />
+        ))}
+      </PostsContainer>
     </div>
-    <PostsContainer>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Post
-          key={node.id}
-          path={node.frontmatter.path}
-          title={node.frontmatter.title}
-          date={node.frontmatter.date}
-          excerpt={node.excerpt}
-        />
-      ))}
-    </PostsContainer>
-  </div>
+  </Layout>
 );
 
 const Post = props => (
@@ -78,12 +81,22 @@ const PostExcerpt = styled.p`
 `;
 
 export const query = graphql`
-  query BlogQuery {
+  query($locale: String) {
+    file(name: { eq: $locale }, relativeDirectory: { eq: "locales/blog" }) {
+      childBlogJson {
+        title
+        description
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 100
       filter: {
-        frontmatter: { template: { eq: "blog-post" }, published: { eq: true } }
+        frontmatter: {
+          locale: { eq: $locale }
+          template: { eq: "blog-post" }
+          published: { eq: true }
+        }
       }
     ) {
       edges {

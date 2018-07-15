@@ -1,6 +1,10 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import styled, { injectGlobal, ThemeProvider } from 'styled-components';
+import LocalizedLink from './LocalizedLink';
+import locales from '../utils/locales';
+import enMessages from '../content/locales/header/en.json';
+import esMessages from '../content/locales/header/es.json';
 import { media } from '../utils/style';
 import logo_letters from '../assets/logo_letters.png';
 import twitter from '../assets/twitter.svg';
@@ -8,69 +12,95 @@ import github from '../assets/github.svg';
 import mail from '../assets/mail.svg';
 import A from '../components/styled/A';
 
+const messages = {
+  en: enMessages,
+  es: esMessages
+};
+
 const theme = {
   colors: {
     primary: '#a6b575',
     primary_dark: '#7f8c55',
     secondary: '#eee7cb',
     secondary_dark: '#ebe2c5',
+    secondary_darker: '#c5bda4'
   }
 };
 
-export default ({ children, data }) => (
-  <ThemeProvider theme={theme}>
-    <Container>
-      {/*
-      <TopBarSection>
-        <TopBar>
-          <LangSpan>Spanish</LangSpan>
-          <LangSpan>English</LangSpan>
-        </TopBar>
-      </TopBarSection>
-      */}
-      <HeaderSection>
-        <Header>
-          <HeaderTitle>
-            <div style={{ height: '100%' }}>
-              <StyledLinkLogo to="/">
-                <Logo src={logo_letters} />
-              </StyledLinkLogo>
-            </div>
-          </HeaderTitle>
-          <Nav>
-            <LinksList>
-              <ListLink to="/projects/">Projects</ListLink>
-              <ListLink to="/blog/">Blog</ListLink>
-              <ListLink to="/about/">About</ListLink>
-            </LinksList>
-          </Nav>
-        </Header>
-      </HeaderSection>
-      <MainSection>
-        <Main>{children()}</Main>
-      </MainSection>
-      <FooterSection>
-        <Footer>
-          <FooterLinks>
-            <StyledA href="https://www.github.com/idest">
-              <SocialLink>
-                <SocialIcon src={github} />
-                <SocialSpan>idest</SocialSpan>
-              </SocialLink>
-            </StyledA>
-            <StyledA href="mailto:ie@idest.io">
-              <SocialLink>
-                <SocialIcon src={mail} />
-                <SocialSpan> ie@idest.io </SocialSpan>
-              </SocialLink>
-            </StyledA>
-          </FooterLinks>
-          <span>© 2018 Iñigo Echeverría</span>
-        </Footer>
-      </FooterSection>
-    </Container>
-  </ThemeProvider>
+const {
+  Provider: LocaleProvider,
+  Consumer: LocaleConsumer
+} = React.createContext();
+
+export default ({ children, data, locale, path }) => (
+  <LocaleProvider value={locale}>
+    <ThemeProvider theme={theme}>
+      <Container>
+        {locale && (
+          <TopBarSection>
+            <TopBar>
+              {Object.keys(locales).map(lang => (
+                <StyledLink
+                  to={
+                    locales[lang].default
+                      ? path
+                      : `/${locales[lang].path}${path}`
+                  }
+                >
+                  <LangSpan active={lang === locale} key={lang}>
+                    {locales[lang].name}
+                  </LangSpan>
+                </StyledLink>
+              ))}
+            </TopBar>
+          </TopBarSection>
+        )}
+        <HeaderSection>
+          <Header>
+            <HeaderTitle>
+              <div style={{ height: '100%' }}>
+                <StyledLinkLogo to="/">
+                  <Logo src={logo_letters} />
+                </StyledLinkLogo>
+              </div>
+            </HeaderTitle>
+            <Nav>
+              <LinksList>
+                <ListLink to="/projects/">{messages[locale].projects}</ListLink>
+                <ListLink to="/blog/">{messages[locale].blog}</ListLink>
+                <ListLink to="/about/">{messages[locale].about}</ListLink>
+              </LinksList>
+            </Nav>
+          </Header>
+        </HeaderSection>
+        <MainSection>
+          <Main>{children}</Main>
+        </MainSection>
+        <FooterSection>
+          <Footer>
+            <FooterLinks>
+              <StyledA href="https://www.github.com/idest">
+                <SocialLink>
+                  <SocialIcon src={github} />
+                  <SocialSpan>idest</SocialSpan>
+                </SocialLink>
+              </StyledA>
+              <StyledA href="mailto:ie@idest.io">
+                <SocialLink>
+                  <SocialIcon src={mail} />
+                  <SocialSpan> ie@idest.io </SocialSpan>
+                </SocialLink>
+              </StyledA>
+            </FooterLinks>
+            <span>© 2018 Iñigo Echeverría</span>
+          </Footer>
+        </FooterSection>
+      </Container>
+    </ThemeProvider>
+  </LocaleProvider>
 );
+
+export { LocaleConsumer };
 
 const ListLink = props => (
   <LinkItem>
@@ -86,18 +116,30 @@ const StyledLink = styled(Link)`
   outline: none;
   &:hover {
     text-decoration: none;
+  }
+`;
+
+const StyledLocalizedLink = styled(LocalizedLink)`
+  color: black;
+  text-decoration: none;
+  outline: none;
+  &:hover {
+    text-decoration: none;
     font-weight: bold;
   }
 `;
 
-const StyledLinkMenu = StyledLink.extend`
+const StyledLinkMenu = StyledLocalizedLink.extend`
   opacity: 0.6;
   &:hover {
     opacity: 1;
   }
 `;
 
-const StyledLinkLogo = StyledLink.extend`
+const StyledLinkLogo = StyledLocalizedLink.extend`
+  display: flex;
+  align-items: center;
+  height: 100%;
   opacity: 0.6;
   &:hover {
     opacity: 1;
@@ -127,7 +169,7 @@ const Container = styled.div`
 const TopBarSection = styled.div`
   width: 100%;
   background-color: #424242;
-`
+`;
 const TopBar = styled.div`
   height: 25px;
   display: flex;
@@ -138,13 +180,16 @@ const TopBar = styled.div`
     width: 960px; 
     margin-left: auto;
     margin-right: auto;
-  `}
+  `};
 `;
 const LangSpan = styled.span`
   font-size: 0.8em;
   margin-left: 10px;
-  color: ${ props => props.theme.colors.secondary}
-`
+  color: ${props =>
+    props.active
+      ? props.theme.colors.secondary_dark
+      : props.theme.colors.secondary_darker};
+`;
 const HeaderSection = styled.div`
   width: 100%;
   background-color: ${props => props.theme.colors.primary};
@@ -153,7 +198,7 @@ const Header = styled.header`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  height: 70px;
+  height: 80px;
   width: 100%;
   ${media.desktop`
     width: 960px; 
@@ -171,7 +216,7 @@ const HeaderTitle = styled.div`
 `;
 const Logo = styled.img`
   box-sizing: border-box;
-  height: 100%;
+  height: 85%;
   width: auto;
   margin: 0;
   padding: 10px;
@@ -253,18 +298,4 @@ const SocialIcon = styled.img`
 
 const SocialSpan = styled.span`
   padding-left: 10px;
-`;
-
-export const query = graphql`
-  query IndexLayoutQuery {
-    site {
-      siteMetadata {
-        shortTitle
-        colors {
-          primary
-          secondary
-        }
-      }
-    }
-  }
 `;

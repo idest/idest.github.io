@@ -1,29 +1,32 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import Layout from '../components/Layout';
 import A from '../components/styled/A';
 import Title from '../components/styled/Title';
 import Description from '../components/styled/Description';
 
-export default ({ data }) => (
-  <div>
+export default ({ pageContext: { locale }, data }) => (
+  <Layout locale={locale} path="/projects">
     <div>
-      <Title>Projects</Title>
-      <Description>Here's a list of my projects</Description>
+      <div>
+        <Title>{data.file.childProjectsJson.title}</Title>
+        <Description>{data.file.childProjectsJson.description}</Description>
+      </div>
+      <ProjectsContainer>
+        {data.allMarkdownRemark.edges.map(({ node }) => {
+          return (
+            <StyledProject
+              image={node.frontmatter.image.publicURL}
+              title={node.frontmatter.title}
+              url={node.frontmatter.url}
+              description={node.excerpt}
+            />
+          );
+        })}
+      </ProjectsContainer>
     </div>
-    <ProjectsContainer>
-      {data.allMarkdownRemark.edges.map(({ node }) => {
-        return (
-          <StyledProject
-            image={node.frontmatter.image.publicURL}
-            title={node.frontmatter.title}
-            url={node.frontmatter.url}
-            description={node.excerpt}
-          />
-        );
-      })}
-    </ProjectsContainer>
-  </div>
+  </Layout>
 );
 
 const Project = props => (
@@ -73,12 +76,22 @@ const ProjectDescription = styled.p`
 `;
 
 export const query = graphql`
-  query ProjectsQuery {
+  query($locale: String) {
+    file(name: { eq: $locale }, relativeDirectory: { eq: "locales/projects" }) {
+      childProjectsJson {
+        title
+        description
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 100
       filter: {
-        frontmatter: { type: { eq: "project" }, published: { eq: true } }
+        frontmatter: {
+          type: { eq: "project" }
+          published: { eq: true }
+          locale: { eq: $locale }
+        }
       }
     ) {
       edges {

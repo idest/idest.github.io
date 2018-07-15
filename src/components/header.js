@@ -1,16 +1,14 @@
-import React from "react"
-import Link from 'gatsby-link'
+import React from 'react';
+import { Link } from 'gatsby';
 
 const Header = ({ siteTitle, bgColor, fgColor }) => {
   return (
     <header style={{ background: bgColor, color: fgColor }}>
       <h1>
-        <Link to="/">
-          {siteTitle}
-        </Link>
+        <Link to="/">{siteTitle}</Link>
       </h1>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

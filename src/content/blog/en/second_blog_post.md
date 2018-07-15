@@ -1,5 +1,6 @@
 ---
 title: "This is my second blog post"
+locale: "en"
 date: "2018-05-07"
 path: "/blog/second-blog-post/"
 type: "post"

@@ -1,7 +1,29 @@
 const path = require('path');
-exports.createPages = ({ boundActionCreators, graphql }) => {
+const locales = require('./src/utils/locales');
+
+exports.onCreatePage = ({ actions, page }) => {
+  const { createPage, deletePage } = actions;
+  return new Promise(resolve => {
+    deletePage(page);
+    Object.keys(locales).map(lang => {
+      const localizedPath = locales[lang].default
+        ? page.path
+        : locales[lang].path + page.path;
+      return createPage({
+        ...page,
+        path: localizedPath,
+        context: {
+          locale: lang
+        }
+      });
+    });
+    resolve();
+  });
+};
+
+exports.createPages = ({ actions, graphql }) => {
   // Query for markdown nodes used in create pages
-  const { createPage } = boundActionCreators;
+  const { createPage } = actions;
   return new Promise((resolve, reject) => {
     graphql(
       `

@@ -59,7 +59,7 @@ const StyledProject = styled(Project)`
 const ProjectThumbnail = styled.img`
   margin-right: 30px;
   width: 300px;
-  height: auto;
+  height: 150px;
 `;
 const ProjectInformation = styled.div`
   width: 50%;

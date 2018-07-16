@@ -34,9 +34,9 @@ export default ({ pageContext: { locale }, data }) => (
 //Description: Explaining things through code and illustration
 
 const Wrapper = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: center;
 `;
 

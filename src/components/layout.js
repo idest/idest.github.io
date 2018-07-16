@@ -79,18 +79,18 @@ export default ({ children, data, locale, path }) => (
         <FooterSection>
           <Footer>
             <FooterLinks>
-              <StyledA href="https://www.github.com/idest">
-                <SocialLink>
+              <SocialLink>
+                <StyledA href="https://www.github.com/idest">
                   <SocialIcon src={github} />
                   <SocialSpan>idest</SocialSpan>
-                </SocialLink>
-              </StyledA>
-              <StyledA href="mailto:ie@idest.io">
-                <SocialLink>
+                </StyledA>
+              </SocialLink>
+              <SocialLink>
+                <StyledA href="mailto:ie@idest.io">
                   <SocialIcon src={mail} />
                   <SocialSpan> ie@idest.io </SocialSpan>
-                </SocialLink>
-              </StyledA>
+                </StyledA>
+              </SocialLink>
             </FooterLinks>
             <span>© 2018 Iñigo Echeverría</span>
           </Footer>
@@ -100,6 +100,20 @@ export default ({ children, data, locale, path }) => (
   </LocaleProvider>
 );
 
+/*
+              <SocialLink>
+                <StyledA href="https://www.github.com/idest">
+                  <SocialIcon src={github} />
+                  <SocialSpan>idest</SocialSpan>
+                </StyledA>
+              </SocialLink>
+              <SocialLink>
+                <StyledA href="mailto:ie@idest.io">
+                  <SocialIcon src={mail} />
+                  <SocialSpan> ie@idest.io </SocialSpan>
+                </StyledA>
+              </SocialLink>
+              */
 export { LocaleConsumer };
 
 const ListLink = props => (
@@ -130,6 +144,7 @@ const StyledLocalizedLink = styled(LocalizedLink)`
 `;
 
 const StyledLinkMenu = StyledLocalizedLink.extend`
+  display: flex;
   opacity: 0.6;
   &:hover {
     opacity: 1;
@@ -143,14 +158,6 @@ const StyledLinkLogo = StyledLocalizedLink.extend`
   opacity: 0.6;
   &:hover {
     opacity: 1;
-  }
-`;
-
-const StyledA = styled(A)`
-  opacity: 0.75;
-  &:hover {
-    opacity: 1;
-    font-weight: bold;
   }
 `;
 
@@ -173,11 +180,11 @@ const TopBarSection = styled.div`
 const TopBar = styled.div`
   height: 25px;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
   padding-right: 80px;
   ${media.desktop`
-    width: 960px; 
+    width: 960px;
     margin-left: auto;
     margin-right: auto;
   `};
@@ -240,19 +247,23 @@ const LinkItem = styled.li`
   margin-left: 1rem;
 `;
 const MainSection = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1;
   width: 100%;
   background-color: ${props => props.theme.colors.secondary};
 `;
 const Main = styled.div`
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   width: 100%;
-  height: 100%;
   padding: 20px;
   padding-left: 120px;
   padding-right: 120px;
   ${media.desktop`
-    width: 960px; 
+    width: 960px;
     margin-left: auto;
     margin-right: auto;
   `};
@@ -272,7 +283,7 @@ const Footer = styled.footer`
   justify-content: space-between;
   align-items: center;
   ${media.desktop`
-    width: 960px; 
+    width: 960px;
     margin-left: auto;
     margin-right: auto;
   `};
@@ -282,18 +293,28 @@ const FooterLinks = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 15px;
+  padding: 5px;
   justify-content: space-between;
 `;
 
 const SocialLink = styled.div`
   display: flex;
+  flex: 1;
+`;
+
+const StyledA = styled(A)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  opacity: 0.75;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const SocialIcon = styled.img`
-  margin-bottom: 0;
   width: 20px;
-  height: auto;
+  margin-bottom: 0;
 `;
 
 const SocialSpan = styled.span`

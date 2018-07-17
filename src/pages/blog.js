@@ -56,12 +56,14 @@ const PostsContainer = styled.div`
   justify-content: center;
 `;
 
+/*
 const StyledPost = styled(Post)`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
 `;
+*/
 
 const PostTitle = styled.h3`
   text-align: center;

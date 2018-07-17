@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled, { injectGlobal, ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import LocalizedLink from './LocalizedLink';
 import locales from '../utils/locales';
 import enMessages from '../content/locales/header/en.json';
 import esMessages from '../content/locales/header/es.json';
 import { media } from '../utils/style';
 import logo_letters from '../assets/logo_letters.png';
-import twitter from '../assets/twitter.svg';
+//import twitter from '../assets/twitter.svg';
 import github from '../assets/github.svg';
 import mail from '../assets/mail.svg';
 import A from '../components/styled/A';

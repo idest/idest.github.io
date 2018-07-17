@@ -65,6 +65,7 @@ const StyledProject = styled(Project)`
   flex-direction: column;
   margin-bottom: 25px;
   justify-content: center;
+  align-items: center;
   ${media.desktop`
     flex-direction: row;
     padding-left: 30px;
@@ -74,6 +75,7 @@ const StyledProject = styled(Project)`
 const ProjectThumbnail = styled.img`
   width: 300px;
   height: 150px;
+
   ${media.desktop`
     margin-right: 30px;
   `};

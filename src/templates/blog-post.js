@@ -6,7 +6,11 @@ import styles from './blog-post.module.css';
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <Layout locale={post.frontmatter.locale} path="/blog">
+    <Layout
+      locale={post.frontmatter.locale}
+      path="/blog"
+      title={post.frontmatter.title}
+    >
       <div>
         <h1 className={styles.title}>{post.frontmatter.title}</h1>
         <div

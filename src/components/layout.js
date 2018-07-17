@@ -99,20 +99,6 @@ export default ({ children, data, locale, path }) => (
   </LocaleProvider>
 );
 
-/*
-              <SocialLink>
-                <StyledA href="https://www.github.com/idest">
-                  <SocialIcon src={github} />
-                  <SocialSpan>idest</SocialSpan>
-                </StyledA>
-              </SocialLink>
-              <SocialLink>
-                <StyledA href="mailto:ie@idest.io">
-                  <SocialIcon src={mail} />
-                  <SocialSpan> ie@idest.io </SocialSpan>
-                </StyledA>
-              </SocialLink>
-              */
 export { LocaleConsumer };
 
 const ListLink = props => (
@@ -274,7 +260,7 @@ const FooterSection = styled.div`
 `;
 const Footer = styled.footer`
   display: flex;
-  height: 40px;
+  height: 50px;
   width: 100%;
   padding: 15px;
   padding-left: 80px;
@@ -292,14 +278,15 @@ const FooterLinks = styled.div`
   display: flex;
   //flex-direction: column;
   height: 100%;
-  padding: 5px;
+  width: 200px;
+  //padding: 5px;
   //justify-content: space-between;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const SocialLink = styled.div`
   display: flex;
-  flex: 1;
+  //flex: 1;
 `;
 
 const StyledA = styled(A)`

@@ -67,7 +67,7 @@ export default ({ children, data, locale, path }) => (
             <Nav>
               <LinksList>
                 <ListLink to="/projects/">{messages[locale].projects}</ListLink>
-                <ListLink to="/blog/">{messages[locale].blog}</ListLink>
+                {/*<ListLink to="/blog/">{messages[locale].blog}</ListLink>*/}
                 <ListLink to="/about/">{messages[locale].about}</ListLink>
               </LinksList>
             </Nav>
@@ -92,7 +92,6 @@ export default ({ children, data, locale, path }) => (
                 </StyledA>
               </SocialLink>
             </FooterLinks>
-            <span>© 2018 Iñigo Echeverría</span>
           </Footer>
         </FooterSection>
       </Container>
@@ -275,12 +274,12 @@ const FooterSection = styled.div`
 `;
 const Footer = styled.footer`
   display: flex;
-  height: 100px;
+  height: 40px;
   width: 100%;
   padding: 15px;
   padding-left: 80px;
   padding-right: 80px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   ${media.desktop`
     width: 960px;
@@ -291,10 +290,11 @@ const Footer = styled.footer`
 
 const FooterLinks = styled.div`
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
   height: 100%;
   padding: 5px;
-  justify-content: space-between;
+  //justify-content: space-between;
+  justify-content: center;
 `;
 
 const SocialLink = styled.div`
@@ -318,5 +318,5 @@ const SocialIcon = styled.img`
 `;
 
 const SocialSpan = styled.span`
-  padding-left: 10px;
+  padding-left: 5px;
 `;

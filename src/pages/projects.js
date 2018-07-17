@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import { media } from '../utils/style';
 import Layout from '../components/Layout';
 import A from '../components/styled/A';
 import Title from '../components/styled/Title';
@@ -9,10 +10,10 @@ import Description from '../components/styled/Description';
 export default ({ pageContext: { locale }, data }) => (
   <Layout locale={locale} path="/projects">
     <div>
-      <div>
+      <Wrapper>
         <Title>{data.file.childProjectsJson.title}</Title>
         <Description>{data.file.childProjectsJson.description}</Description>
-      </div>
+      </Wrapper>
       <ProjectsContainer>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           return (
@@ -28,6 +29,12 @@ export default ({ pageContext: { locale }, data }) => (
     </div>
   </Layout>
 );
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const Project = props => (
   <StyledA href={props.url}>
@@ -48,31 +55,55 @@ const StyledA = styled(A)`
   }
 `;
 const ProjectsContainer = styled.div`
-  margin-top: 40px;
+  margin-top: 15px;
+  ${media.desktop`
+    margin-top: 40px;
+  `};
 `;
 const StyledProject = styled(Project)`
   display: flex;
-  padding-left: 30px;
-  justify-content: flex-end;
+  flex-direction: column;
   margin-bottom: 25px;
+  justify-content: center;
+  ${media.desktop`
+    flex-direction: row;
+    padding-left: 30px;
+    justify-content: flex-end;
+  `};
 `;
 const ProjectThumbnail = styled.img`
-  margin-right: 30px;
   width: 300px;
   height: 150px;
+  ${media.desktop`
+    margin-right: 30px;
+  `};
 `;
 const ProjectInformation = styled.div`
-  width: 50%;
+  width: 100%;
+  text-align: justify;
+  text-align-last: center;
+  ${media.desktop`
+    width: 50%;
+    text-align: left;
+    text-align-last: left;
+  `};
 `;
 const ProjectTitle = styled.h3`
   width: 100%;
+  text-align: center;
   margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  ${media.desktop`
+    text-align: left;
+    margin-bottom: 15px;
+  `};
 `;
 const ProjectDescription = styled.p`
   box-sizing: border-box;
   width: 100%;
-  padding-right: 30px;
+  ${media.desktop`
+    padding-right: 30px;
+  `};
 `;
 
 export const query = graphql`

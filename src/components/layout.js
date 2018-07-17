@@ -166,12 +166,13 @@ const TopBar = styled.div`
   height: 25px;
   display: flex;
   justify-content: flex-end;
+  padding-right: 10px;
   align-items: center;
-  padding-right: 80px;
   ${media.desktop`
     width: 960px;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 80px;
   `};
 `;
 const LangSpan = styled.span`
@@ -203,8 +204,11 @@ const HeaderTitle = styled.div`
   display: flex;
   width: 30%;
   height: 100%;
-  padding-left: 80px;
   align-items: center;
+  padding-left: 10px;
+  ${media.desktop`
+    padding-left: 80px;
+  `};
 `;
 const Logo = styled.img`
   box-sizing: border-box;
@@ -220,8 +224,11 @@ const Nav = styled.nav`
   height: 100%;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-right: 80px;
+  padding-right: 10px;
   padding-bottom: 10px;
+  ${media.desktop`
+    padding-right: 80px;
+  `};
 `;
 const LinksList = styled.ul`
   margin: 0;
@@ -245,12 +252,14 @@ const Main = styled.div`
   flex: 1;
   width: 100%;
   padding: 20px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 20px;
+  padding-right: 20px;
   ${media.desktop`
     width: 960px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 120px;
+    padding-right: 120px;
   `};
 `;
 const FooterSection = styled.div`
@@ -263,14 +272,16 @@ const Footer = styled.footer`
   height: 50px;
   width: 100%;
   padding: 15px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
   justify-content: center;
   align-items: center;
   ${media.desktop`
     width: 960px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
   `};
 `;
 

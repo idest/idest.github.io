@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 import LocalizedLink from './LocalizedLink';
@@ -32,10 +33,46 @@ const {
   Consumer: LocaleConsumer
 } = React.createContext();
 
-export default ({ children, data, locale, path }) => (
+export default ({ children, data, locale, path, title }) => (
   <LocaleProvider value={locale}>
     <ThemeProvider theme={theme}>
       <Container>
+        <Helmet titleTemplate="%s · Id est" defaultTitle="Id est">
+          <html lang={locale ? locale : 'en'} />
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <meta
+            name="description"
+            content="Explaining things through code and illustration"
+          />
+          {title && <title>{title}</title>}
+
+          {/* realfavicongenerator.com */}
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+          <meta name="msapplication-TileColor" content="#eee7cb" />
+          <meta name="theme-color" content="#eee7cb" />
+        </Helmet>
         {locale && (
           <TopBarSection>
             <TopBar>

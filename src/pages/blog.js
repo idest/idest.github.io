@@ -6,7 +6,7 @@ import Title from '../components/styled/Title';
 import Description from '../components/styled/Description';
 
 export default ({ pageContext: { locale }, data }) => (
-  <Layout locale={locale} path="/blog">
+  <Layout locale={locale} path="/blog" title="Blog">
     <div>
       <div>
         <Title>{data.file.childBlogJson.title}</Title>

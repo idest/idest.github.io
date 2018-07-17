@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import { media } from '../utils/style';
 import Layout from '../components/Layout';
 import LogoLaptop from '../assets/LogoLaptop.png';
 //import Title from '../components/styled/Title';
@@ -17,15 +18,15 @@ export default ({ pageContext: { locale }, data }) => (
           <WordType>
             <em>{data.file.childIndexJson.ieWordType}</em>
           </WordType>
-          <First>
-            <strong>1.</strong> [{data.file.childIndexJson.ieWordOrigin}{' '}
-            <em>
-              <strong>Id est</strong>
-            </em>.] {data.file.childIndexJson.ieFirstDef}
-          </First>
-          <Second>
-            <strong>2.</strong> {data.file.childIndexJson.ieSecondDef}
-          </Second>
+          <ol>
+            <li>
+              [{data.file.childIndexJson.ieWordOrigin}{' '}
+              <em>
+                <strong>Id est</strong>
+              </em>.] {data.file.childIndexJson.ieFirstDef}
+            </li>
+            <li>{data.file.childIndexJson.ieSecondDef}</li>
+          </ol>
         </Def>
       </Title>
     </Wrapper>
@@ -44,6 +45,7 @@ const LogoContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   height: 150px;
+  margin-top: 10px;
   margin-bottom: 20px;
   justify-content: center;
 `;
@@ -54,7 +56,9 @@ const Logo = styled.img`
 const Title = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  ${media.desktop`
+    margin-bottom: 20px;
+  `};
 `;
 const Def = styled.div`
   display: flex;
@@ -63,8 +67,6 @@ const Def = styled.div`
   font-size: 1.4em;
 `;
 const WordType = styled.span``;
-const First = styled.span``;
-const Second = styled.span``;
 
 export const query = graphql`
   query($locale: String) {

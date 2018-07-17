@@ -252,8 +252,8 @@ const Main = styled.div`
   flex: 1;
   width: 100%;
   padding: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
   ${media.desktop`
     width: 960px;
     margin-left: auto;

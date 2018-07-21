@@ -37,7 +37,7 @@ export default ({ children, data, locale, path, title }) => (
   <LocaleProvider value={locale}>
     <ThemeProvider theme={theme}>
       <Container>
-        <Helmet titleTemplate="%s · Id est" defaultTitle="Id est">
+        <Helmet titleTemplate="%s · idest" defaultTitle="idest">
           <html lang={locale ? locale : 'en'} />
           <meta charSet="utf-8" />
           <meta

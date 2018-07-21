@@ -22,7 +22,7 @@ export default ({ pageContext: { locale }, data }) => (
             <li>
               [{data.file.childIndexJson.ieWordOrigin}{' '}
               <em>
-                <strong>Id est</strong>
+                <strong>id est</strong>
               </em>.] {data.file.childIndexJson.ieFirstDef}
             </li>
             <li>{data.file.childIndexJson.ieSecondDef}</li>

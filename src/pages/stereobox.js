@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Compass extends React.Component {
+class Stereobox extends React.Component {
   componentDidMount() {
     this.props.pageContext.locale === 'es'
       ? window.location.replace('https://idest.github.io/stereobox/#/es')
@@ -11,4 +11,4 @@ class Compass extends React.Component {
   }
 }
 
-export default Compass;
+export default Stereobox;

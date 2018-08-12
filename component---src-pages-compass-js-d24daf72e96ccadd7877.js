@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{212:function(n,t,e){"use strict";e.r(t),e(68);var o=e(33),i=e.n(o),r=e(1),u=e.n(r),p=function(n){function t(){return n.apply(this,arguments)||this}i()(t,n);var e=t.prototype;return e.componentDidMount=function(){window.location.replace("https://idest.github.io/stereobox/#/es")},e.render=function(){return u.a.createElement("div",null)},t}(u.a.Component);t.default=p}}]);
+//# sourceMappingURL=component---src-pages-compass-js-d24daf72e96ccadd7877.js.map

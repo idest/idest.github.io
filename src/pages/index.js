@@ -24,6 +24,9 @@ export default ({ pageContext: { locale }, data }) => (
               <em>
                 <strong>id est</strong>
               </em>.] {data.file.childIndexJson.ieFirstDef}
+              <Span>
+                <em>{data.file.childIndexJson.ieFirstDefExplanation}</em>
+              </Span>
             </li>
             <li>{data.file.childIndexJson.ieSecondDef}</li>
           </ol>
@@ -64,9 +67,13 @@ const Def = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  font-size: 1.4em;
+  font-size: 1.2em;
 `;
 const WordType = styled.span``;
+
+const Span = styled.span`
+  display: block;
+`;
 
 export const query = graphql`
   query($locale: String) {
@@ -75,6 +82,7 @@ export const query = graphql`
         ieWordType
         ieWordOrigin
         ieFirstDef
+        ieFirstDefExplanation
         ieSecondDef
       }
     }

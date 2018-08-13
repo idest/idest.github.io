@@ -1,6 +1,7 @@
 {
   "ieWordType": "abbreviation",
   "ieWordOrigin": "From latin",
-  "ieFirstDef": "That is (to say).",
+  "ieFirstDef": "That is to say; in other words.",
+  "ieFirstDefExplanation": "Used to introduce a clarification or explanation.",
   "ieSecondDef": "Interactively Explained."
 }
